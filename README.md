@@ -1,67 +1,51 @@
-# Desafio Backend Jitterbit
+#Desafio Backend -  
 
-API REST desenvolvida em **Node.js** com **Express** e **MongoDB** para gerenciamento de pedidos.
+Este projeto é uma API desenvolvida para o processo seletivo de Analista de Sistemas Jr. A aplicação realiza o gerenciamento de pedidos (Orders), permitindo a criação, listagem, atualização e exclusão de registros (CRUD) integrados com MongoDB.
 
-## Objetivo
+- Tecnologias Utilizadas
+Node.js & Express (Framework Web)
+Mongoose (Modelagem de dados/MongoDB)
+Dotenv (Variáveis de ambiente)
+Nodemon (Ambiente de desenvolvimento)
 
-O objetivo deste projeto é criar uma API simples para cadastrar, consultar, listar, atualizar e remover pedidos, realizando o mapeamento dos campos recebidos no body para o formato salvo no banco de dados.
+-  Estrutura do Projeto
+O projeto segue o padrão MVC para garantir escalabilidade e organização:
+config/: Configurações de banco de dados.
+controllers/: Lógica de negócio e tratamento de requisições.
+models/: Definição dos esquemas de dados.
+routes/: Definição dos endpoints da API.
 
-## Tecnologias utilizadas
+- Como executar o projeto
+Instalar as dependências:
 
-- Node.js
-- Express
-- MongoDB Atlas
-- Mongoose
-- Dotenv
-- Nodemon
-
-## Estrutura do projeto
-
-```bash
-desafio-backend-jitterbit/
-├── config/
-│   └── database.js
-├── controllers/
-│   └── orderController.js
-├── models/
-│   └── orderModel.js
-├── routes/
-│   └── orderRoutes.js
-├── .gitignore
-├── app.js
-├── package-lock.json
-├── package.json
-└── README.md
-Como executar o projeto
-
-# 1. Instalar as dependências
-
+- Bash
 npm install
+Configurar o ambiente:
+Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 
-# 2. Criar o arquivo .env
-
+- Code snippet
 PORT=3000
 MONGO_URI=sua_string_de_conexao_com_o_mongodb
+Executar o projeto:
 
-# 3. Executar o projeto
-
+- Bash
 npm run dev
 
-## Endpoints
+- Endpoints
+Método	Endpoint	Descrição
+POST	/order	Cria um novo pedido
+GET	/order/:id	Busca um pedido por ID
+GET	/order/list	Lista todos os pedidos
+PUT	/order/:id	Atualiza um pedido existente
+DELETE	/order/:id	Remove um pedido
 
-POST /order
-GET /order/:id
-GET /order/list
-PUT /order/:id
-DELETE /order/:id
+Exemplo de JSON (Payload)
+Abaixo, um exemplo do formato esperado pela API no POST /order:
 
-Mapping dos dados
-
-A API recebe:
 {
   "numeroPedido": "v10089016vdb",
   "valorTotal": 10000,
-  "dataCriacao": "2023-07-19T12:24:11.5299601+00:00",
+  "dataCriacao": "2023-07-19T12:24:11.529Z",
   "items": [
     {
       "idItem": "2434",
@@ -70,9 +54,3 @@ A API recebe:
     }
   ]
 }
-
-
-
-
-
-
