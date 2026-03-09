@@ -43,10 +43,12 @@ npm install
 PORT=3000
 MONGO_URI=sua_string_de_conexao_com_o_mongodb
 
-3. Executar o projeto
+# 3. Executar o projeto
+
 npm run dev
 
-Endpoints
+## Endpoints
+
 POST /order
 GET /order/:id
 GET /order/list
@@ -54,6 +56,7 @@ PUT /order/:id
 DELETE /order/:id
 
 Mapping dos dados
+
 A API recebe:
 {
   "numeroPedido": "v10089016vdb",
@@ -69,6 +72,7 @@ A API recebe:
 }
 
 Mapping dos dados
+
 A API recebe:
 {
   "numeroPedido": "v10089016vdb",
@@ -82,6 +86,7 @@ A API recebe:
     }
   ]
 }
+
 
 
 
