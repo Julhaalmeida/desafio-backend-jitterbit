@@ -1,46 +1,58 @@
-#Desafio Backend
+# Desafio Backend - 
 
-Este projeto é uma API desenvolvida para o processo seletivo de Analista de Sistemas Jr. A aplicação realiza o gerenciamento de pedidos (Orders), permitindo a criação, listagem, atualização e exclusão de registros (CRUD) integrados com MongoDB.
+Este projeto consiste em uma **API REST**. A aplicação foi construída para gerenciar o ciclo de vida de pedidos (Orders), permitindo operações de CRUD (Create, Read, Update, Delete) com persistência em banco de dados NoSQL.
 
-#Tecnologias Utilizadas
-Node.js & Express (Framework Web)
-Mongoose (Modelagem de dados/MongoDB)
-Dotenv (Variáveis de ambiente)
-Nodemon (Ambiente de desenvolvimento)
+---
 
-#Estrutura do Projeto
-O projeto segue o padrão MVC para garantir escalabilidade e organização:
-config/: Configurações de banco de dados.
-controllers/: Lógica de negócio e tratamento de requisições.
-models/: Definição dos esquemas de dados.
-routes/: Definição dos endpoints da API.
+## Tecnologias e Arquitetura
 
-#Como executar o projeto
-Instalar as dependências:
+O projeto foi estruturado utilizando o padrão de arquitetura **MVC** (Models, Controllers, Routes), garantindo uma manutenção simplificada e organização profissional do código:
 
-Bash
+* **Node.js**: Ambiente de execução Javascript Server-side.
+* **Express**: Framework para gerenciamento de rotas e requisições HTTP.
+* **MongoDB & Mongoose**: Banco de dados NoSQL e biblioteca de modelagem de dados.
+* **Dotenv**: Gerenciamento seguro de variáveis de ambiente.
+
+---
+
+## Estrutura do Projeto
+
+```text
+├── config/          # Configuração da conexão com o Banco de Dados (MongoDB)
+├── controllers/     # Lógica de negócio e tratamento das requisições
+├── models/          # Definição dos Schemas e modelos de dados
+├── routes/          # Definição dos endpoints e roteamento da API
+├── .gitignore       # Arquivos ignorados pelo controle de versão (ex: node_modules, .env)
+├── app.js           # Arquivo principal de inicialização do servidor
+├── package.json     # Gerenciamento de dependências e scripts do projeto
+└── README.md        # Documentação do repositório
+
+## Como Executar o Projeto
+Clone o repositório ou baixe os arquivos.
+
+## Instale as dependências necessárias:
 npm install
-Configurar o ambiente:
-Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 
-Code snippet
+**Configure as variáveis de ambiente:**
+Crie um arquivo .env na raiz do projeto e adicione suas credenciais conforme o exemplo abaixo:
 PORT=3000
 MONGO_URI=sua_string_de_conexao_com_o_mongodb
-Executar o projeto:
 
-Bash
+## Inicie a aplicação em modo de desenvolvimento:
 npm run dev
 
-Endpoints
-Método	Endpoint	Descrição
-POST	/order	Cria um novo pedido
-GET	/order/:id	Busca um pedido por ID
-GET	/order/list	Lista todos os pedidos
-PUT	/order/:id	Atualiza um pedido existente
-DELETE	/order/:id	Remove um pedido
+## Endpoints da API
+Abaixo estão as rotas disponíveis para interação com o sistema de pedidos:
 
-Exemplo de JSON (Payload)
-Abaixo, um exemplo do formato esperado pela API no POST /order:
+Método	Endpoint	Descrição
+POST	/order	Cria um novo pedido no banco de dados
+GET	/order/list	Retorna a lista completa de pedidos cadastrados
+GET	/order/:id	Busca os detalhes de um pedido através do seu ID
+PUT	/order/:id	Atualiza os dados de um pedido existente
+DELETE	/order/:id	Remove um pedido permanentemente do sistema
+
+## Exemplo de Payload (JSON)
+Para realizar requisições de criação ou atualização, utilize o seguinte formato no corpo da mensagem:
 
 {
   "numeroPedido": "v10089016vdb",
@@ -54,5 +66,3 @@ Abaixo, um exemplo do formato esperado pela API no POST /order:
     }
   ]
 }
-
-
