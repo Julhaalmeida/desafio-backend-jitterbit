@@ -34,10 +34,12 @@ desafio-backend-jitterbit/
 └── README.md
 Como executar o projeto
 
-1. Instalar as dependências
+# 1. Instalar as dependências
+
 npm install
 
-2. Criar o arquivo .env
+# 2. Criar o arquivo .env
+
 PORT=3000
 MONGO_URI=sua_string_de_conexao_com_o_mongodb
 
@@ -80,5 +82,6 @@ A API recebe:
     }
   ]
 }
+
 
 
